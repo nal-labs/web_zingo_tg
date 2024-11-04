@@ -1,0 +1,71 @@
+.missionPage {
+  width: 100%;
+  height: 100%;
+  padding: 0px 15px;
+  box-sizing: border-box;
+  background: url('../../assets/img/BG.png') no-repeat;
+  background-size: contain;
+  color: #fff;
+  .header {
+    padding-top: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .missionContent {
+    margin-top: 26px;
+    padding-bottom: 30px;
+    .missionItem {
+      width: 100%;
+      padding: 16px;
+      box-sizing: border-box;
+      // border: 2px solid #4D4D4D;
+      background: url('../../assets/img/border_line.png') no-repeat;
+      background-size: 100% 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 15px;
+      .content {
+        .name {
+          font-size: 16px;
+          line-height: 16px;
+        }
+        .dsc {
+          color: #808080;
+          margin-top: 6px;
+        }
+        .integral {
+          margin-top: 8px;
+          >img {
+            width: 12px;
+            height: 12px;
+            margin-right: 4px;
+          }
+        }
+      }
+      .statusBox {
+        width: 50px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+    .onItem {
+      background: url('../../assets/img/select_border_icon.png') no-repeat;
+      background-size: 100% 100%;
+    }
+  }
+  .lark {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 20px;
+    bottom: 100px;
+    opacity: 0; 
+    &.animate {
+      transition: all 1s ease-in-out; /* 动画效果 */
+    }
+  }
+}
