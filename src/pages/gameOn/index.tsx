@@ -5,7 +5,7 @@ import gamePicture from '@/assets/img/game_picture.png'
 import shareIcon from '@/assets/img/share_icon.png'
 import playButton from '@/assets/img/play_button.png'
 import playButtonClick from '@/assets/img/play_button_click.png'
-import Share from '@/components/share'
+import Share from '@/components/Share'
 import styles from './index.module.less'
 const gameOn = () => {
   const [isPlay, setIsPlay] = useState<boolean>(false)

@@ -1,5 +1,5 @@
 import { useState, useImperativeHandle,forwardRef } from "react";
-import Drawer from "../drawer";
+import Drawer from "../Drawer";
 import styles from './index.module.less'
 import wenhaoIcon from '@/assets/img/wenhao_icon.png'
 import zinBinIcon from '@/assets/img/zin_bin_icon.png'

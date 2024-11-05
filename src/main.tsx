@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import App from './App'
 import "@/styles/index.less";
 
-// import { init, backButton } from '@telegram-apps/sdk-react';
+// import { init, backButton } from '@telegram-apps/gitsdk-react';
 // init();
 
 // backButton.mount();
