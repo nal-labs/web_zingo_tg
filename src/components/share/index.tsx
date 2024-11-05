@@ -9,6 +9,7 @@ import fsbook from '@/assets/img/fsbook.png'
 import link from '@/assets/img/link.png'
 import noDataIcon from '@/assets/img/no_data_icon.png'
 import linkIconShare from '@/assets/img/link_icon_share.png'
+import { shareURL } from '@telegram-apps/sdk';
 
 
 const Share = forwardRef((_, ref:any) => {
@@ -22,6 +23,9 @@ const Share = forwardRef((_, ref:any) => {
       setDrawerOpen(true);
     }
   }));
+  const handleShareOnTg = () => {
+    shareURL('https://t.me/heyqbnk', 'Check out this cool group!');
+  }
   return(
       <Drawer isOpen={isDrawerOpen} onClose={onClose}>
         <div className={styles.shareBox}>
@@ -45,7 +49,7 @@ const Share = forwardRef((_, ref:any) => {
               </div>
             </div>
             <div className={styles.footBtn}>
-              <div className={styles.shareBtn}>
+              <div className={styles.shareBtn} onClick={handleShareOnTg}>
                 Share on Telegram
               </div>
               <img src={linkIconShare} alt="" />

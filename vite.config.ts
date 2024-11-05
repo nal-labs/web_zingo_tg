@@ -12,6 +12,7 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),
+      // '@telegram-apps/sdk': path.resolve('node_modules/@telegram-apps/sdk/src'),
     },
   },
   css: {
