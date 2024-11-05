@@ -51,19 +51,21 @@ const gameOn = () => {
               <img onClick={handleShare} src={shareIcon} alt="" className={styles.shareIcon}/>
             </div>
             <div className={styles.gameInfo}>
-              <img src={item.icon} alt="" />
-              <div className={styles.info}>
-                <p className={styles.gameName}>{item.name}</p>
-                <p className={styles.developer}>
-                  <span className={styles.devName}>
-                    {item.developer}
-                  </span>
-                  · 
-                  <span className={styles.playNum}>
-                    {item.playNum}
-                  </span> 
-                  played
-                </p>
+              <div className={styles.leftInfo}>
+                <img src={item.icon} alt="" />
+                <div className={styles.info}>
+                  <p className={styles.gameName}>{item.name}</p>
+                  <p className={styles.developer}>
+                    <span className={styles.devName}>
+                      {item.developer}
+                    </span>
+                    · 
+                    <span className={styles.playNum}>
+                      {item.playNum}
+                    </span> 
+                    played
+                  </p>
+                </div>
               </div>
               <div className={styles.playBtn}>
                 {!isPlay ? <img src={playButton} alt="" onClick={handlePlay}/> :

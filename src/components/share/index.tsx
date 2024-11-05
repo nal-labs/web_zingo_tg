@@ -8,6 +8,7 @@ import whatsapp from '@/assets/img/whatsapp.png'
 import fsbook from '@/assets/img/fsbook.png'
 import link from '@/assets/img/link.png'
 import noDataIcon from '@/assets/img/no_data_icon.png'
+import linkIconShare from '@/assets/img/link_icon_share.png'
 
 
 const Share = forwardRef((_, ref:any) => {
@@ -43,8 +44,11 @@ const Share = forwardRef((_, ref:any) => {
                 <p>+5</p>
               </div>
             </div>
-            <div className={styles.shareBtn}>
-              Share on Telegram
+            <div className={styles.footBtn}>
+              <div className={styles.shareBtn}>
+                Share on Telegram
+              </div>
+              <img src={linkIconShare} alt="" />
             </div>
             {/* <div className={styles.shareClass}>
                 img

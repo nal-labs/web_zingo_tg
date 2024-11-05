@@ -8,8 +8,9 @@ import timeSinIcon from '@/assets/img/time_sin_icon.png'
 import zcoinWhiteIcon from '@/assets/img/zcoin_white_icon.png'
 import Share from '@/components/share'
 import Lark from '@/assets/img/Lark.gif'
-
+import zcoin from '@/assets/lottie/zcoin.json'
 import styles from './index.module.less'
+import Lottie from 'lottie-react'
 
 const missionPage = () => {
   const shareRef = useRef<any>(null);
@@ -102,16 +103,18 @@ const missionPage = () => {
       <div className={styles.missionContent}>
         {zinList.map((item,index) => [
           <div className={`${styles.missionItem} ${index === selectItem && styles.onItem}`} key={index}>
-            <img src={item.icon} alt="" />
-            <div className={styles.content}>
-              <p className={styles.name}>{item.name}</p>
-              <span className={styles.dsc}>{item.dsc}</span>
-              <p className={styles.integral}>
-                <img src={zcoinWhiteIcon} alt="" />
-                {
-                  item.zinNum
-                }
-              </p>
+            <div className={styles.leftItem}>
+              <img src={item.icon} alt="" />
+              <div className={styles.content}>
+                <p className={styles.name}>{item.name}</p>
+                <span className={styles.dsc}>{item.dsc}</span>
+                <p className={styles.integral}>
+                  <img src={zcoinWhiteIcon} alt="" />
+                  {
+                    item.zinNum
+                  }
+                </p>
+              </div>
             </div>
             <div className={`${styles.statusBox} ${'btns'+index}`} onClick={() => handleClickMission(index)}>
               <img src={item.statusIcon}  />
@@ -125,6 +128,9 @@ const missionPage = () => {
         ref={larkRef}
         className={`${styles.lark} ${animating && styles.animate}`}
       />
+      <div  ref={larkRef} className={`${styles.lark} ${animating && styles.animate}`}>
+          <Lottie animationData={zcoin} loop={true}  />
+        </div>
     </div>
   )
 }

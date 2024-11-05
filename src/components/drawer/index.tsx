@@ -10,12 +10,12 @@ const Drawer = ({ isOpen, onClose, children }:DrawerProps) => {
   return (
     <>
       {isOpen && <div className={styles.overlay} onClick={onClose} />}
-      <div className={`${styles.drawer} ${isOpen ? styles.open : ''}`}>
+      {isOpen && <div className={`${styles.drawer} ${isOpen ? styles.open : ''}`}>
         <div className={styles.drawerContent}>
           <img src={closeIcon} className={styles.closeButton} onClick={onClose} />
           {children}
         </div>
-      </div>
+      </div>}
     </>
   );
 };

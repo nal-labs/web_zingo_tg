@@ -6,6 +6,8 @@ import riliIcon from '@/assets/img/rili.png'
 import Welcome from './components/welcome'
 import styles from './index.module.less'
 import Lark from '@/assets/img/Lark.gif'
+import zcoin from '@/assets/lottie/zcoin.json'
+import Lottie from "lottie-react";
 const zinPage = () => {
   const [animating, setAnimating] = useState(false)
   const larkRef = useRef<HTMLImageElement | null>(null);
@@ -127,12 +129,9 @@ const zinPage = () => {
             }
           </div>
         </div>
-        <img
-          src={Lark}
-          alt=""
-          ref={larkRef}
-          className={`${styles.lark} ${animating && styles.animate}`}
-        />
+        <div  ref={larkRef} className={`${styles.lark} ${animating && styles.animate}`}>
+          <Lottie animationData={zcoin} loop={true}  />
+        </div>
       </div>
     </>
   )
