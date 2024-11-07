@@ -1,6 +1,7 @@
 import styles from './index.module.less'; // 引入 Less 文件
 import closeIcon from '@/assets/img/close_icon.png'
 import ReactDOM from 'react-dom';
+import { useEffect } from 'react';
 interface DrawerProps {
   isOpen: boolean;
   onClose: () => void;
@@ -8,6 +9,19 @@ interface DrawerProps {
 }
 
 const Drawer = ({ isOpen, onClose, children }:DrawerProps) => {
+   // 使用 useEffect 来在弹窗打开时禁用页面滚动
+   useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden'; // 禁止页面滚动
+    } else {
+      document.body.style.overflow = ''; // 恢复页面滚动
+    }
+
+    // 清理 effect，恢复页面滚动
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
   return isOpen
   ? ReactDOM.createPortal(
       <>
