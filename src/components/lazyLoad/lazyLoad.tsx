@@ -1,4 +1,7 @@
+import Lottie from "lottie-react";
 import { Suspense } from "react";
+import styles from './lazyLoad.module.less'
+import loadingZingo from '@/assets/lottie/loading_zingo.json'
 
 /**
  * @description 路由懒加载
@@ -9,15 +12,8 @@ const lazyLoad = (Comp: React.LazyExoticComponent<any>): React.ReactNode => {
 	return (
 		<Suspense
 			fallback={
-				<div
-					style={{
-						display: "flex",
-						alignItems: "center",
-						justifyContent: "center",
-						height: "100%"
-					}}
-				>
-        加载中....
+				<div className={styles.loadingOverlay}>
+          <Lottie animationData={loadingZingo} loop={true} />
         </div>
 			}
 		>

@@ -11,7 +11,7 @@ import Lark from '@/assets/img/Lark.gif'
 import zcoin from '@/assets/lottie/zcoin.json'
 import styles from './index.module.less'
 import Lottie from 'lottie-react'
-
+import { event } from '@/utils/gtag'
 const missionPage = () => {
   const shareRef = useRef<any>(null);
   const [animating, setAnimating] = useState(false)
@@ -20,9 +20,7 @@ const missionPage = () => {
   const handleShare = () => {
     if (shareRef.current) {
       shareRef.current.onOpen(); 
-      window.gtag('event', 'mission_share', {
-        page_path: window.location.pathname,
-      });
+      event('mission_share')
     }
   }
   const zinList = [
@@ -89,16 +87,14 @@ const missionPage = () => {
     }
   }
   useEffect(() => {
-    window.gtag('event', 'mission_pageview', {
-      page_path: window.location.pathname,
-    });
+    event('mission_pageview')
   }, []);
   return(
     <div className={styles.missionPage}>
       <Share ref={shareRef}/>
       <div className={styles.header}>
         <img src={missionTextIcon} alt="" />
-        <img onClick={handleShare} src={shareIcon} alt="" />
+        <img className={styles.shareIcon} onClick={handleShare} src={shareIcon} alt="" />
       </div>
       <div className={styles.missionContent}>
         {zinList.map((item,index) => [

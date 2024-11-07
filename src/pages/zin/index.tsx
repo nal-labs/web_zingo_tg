@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react'
-
 import taskTextIcon from '@/assets/img/task_text_icon.png'
 import zcoinWhiteIcon from '@/assets/img/zcoin_white_icon.png'
 import riliIcon from '@/assets/img/rili.png'
@@ -8,6 +7,7 @@ import styles from './index.module.less'
 import Lark from '@/assets/img/Lark.gif'
 import zcoin from '@/assets/lottie/zcoin.json'
 import Lottie from "lottie-react";
+import { event } from '@/utils/gtag'
 const zinPage = () => {
   const [animating, setAnimating] = useState(false)
   const larkRef = useRef<HTMLImageElement | null>(null);
@@ -29,11 +29,9 @@ const zinPage = () => {
     }
   ]
   useEffect(() => {
-    window.gtag('event', 'zin_pageview', {
-      page_path: window.location.pathname,
-    });
+    event('zin_pageview')
   }, []);
-  const handleSignIn = (index: number) => {
+  const handleSignIn = (index: number,item?:any) => {
     const button = document.querySelector(`.btn${index}`);
     const target = document.querySelector(`.${styles.num}`);
     console.log(button,target,larkRef.current)
@@ -62,6 +60,7 @@ const zinPage = () => {
           larkRef.current!.style.opacity = '0';
           larkRef.current!.style.left = `${startX}px`;
           larkRef.current!.style.top = `${startY}px`;
+          event('zin_click_task', item)
         }, 1000); // 动画持续时间
       }, 0);
     }
@@ -98,7 +97,7 @@ const zinPage = () => {
                       </p>
                     </div>
                   </div>
-                  <div className={`${styles.rightBtn} ${'btn'+index}`} onClick={() => handleSignIn(index)}>
+                  <div className={`${styles.rightBtn} ${'btn'+index}`} onClick={() => handleSignIn(index,item)}>
                       {item.status === 1 ? 'GO' : 'Claim'}
                   </div>
                 </div>

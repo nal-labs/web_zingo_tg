@@ -14,11 +14,17 @@
         width: 100%;
         height: 190px;
         position: relative;
+        background: url('../../assets/img/game_on_img_bg.png') no-repeat;
+        background-size: 100% 100%;
+        padding: 2px;
         .mainImg {
+          border-radius: 4px;
           width: 100%;
           height: 100%;
         }
         .shareIcon {
+          width: 30px;
+          height: 34.5px;
           position: absolute;
           right: 18px;
           bottom: 10px;
@@ -33,8 +39,16 @@
           display: flex;
           align-items: center;
         }
+        .playBtn {
+          width: 86px;
+          height: 32px;
+          >img {
+            width: 100%;
+            height: 100%;
+          }
+        }
         .info {
-          margin-left: 10px;
+          margin-left: 8px;
           .gameName {
             font-size: 16px;
             font-weight: 600;

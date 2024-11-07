@@ -1,5 +1,9 @@
 module.exports = {
-  extends: ["plugin:prettier/recommended", "plugin:react/jsx-runtime"],
+  extends: [
+    "plugin:prettier/recommended",
+    "plugin:react/jsx-runtime",
+    "prettier"
+  ],
   plugins: ["prettier"],
   rules: {
     "prettier/prettier": "error",

@@ -2,7 +2,7 @@ import { lazy } from "react";
 import { Navigate, useRoutes } from "react-router-dom";
 import { RouteObject } from "@/router/interface";
 import MainLayout from "@/layout/MainLayout/index";
-import lazyLoad from "@/router/utils/lazyLoad";
+import lazyLoad from "@/components/lazyLoad/lazyLoad";
 
 export const rootRouter: RouteObject[] = [
   {

@@ -12,10 +12,12 @@ import { useNavigate,useLocation } from "react-router-dom";
 
 const FooterBar = () => {
   const navigate = useNavigate();
+  const finishTaskText = 'You’ve sniffed out all Zins here today, explore more on mission!'
   const [dialogTextArr,setDialogTextArr] = useState([
-    'You’ve sniffed out all Zins here today, explore more on mission',
+    'Let’s uncover the treasure of Zingo together!',
+    'Sniff Sniff！',
     'Have a lovely day!',
-    '点我干啥，你再点下试试',
+    'I can smell happiness in the air！'
   ])
   const [dialogText,setDialogText] = useState(null)
   const getRandomText:any = () => {

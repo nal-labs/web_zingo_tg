@@ -6,10 +6,10 @@ import shareIcon from '@/assets/img/share_icon.png'
 import playButton from '@/assets/img/play_button.png'
 import playButtonClick from '@/assets/img/play_button_click.png'
 import Share from '@/components/Share'
-import styles from './index.module.less'
+import styles from './index.module.less';
 import { retrieveLaunchParams  } from '@telegram-apps/sdk';
 import CryptoJS from 'crypto-js';
-import { parse,validate  } from '@telegram-apps/init-data-node';
+import { event } from '@/utils/gtag'
 const gameOn = () => {
   const [isPlay, setIsPlay] = useState<boolean>(false)
   const [isValid, setIsValid] = useState<boolean>(false);  // 用于存储验证结果
@@ -17,11 +17,11 @@ const gameOn = () => {
   const { initDataRaw, initData} = retrieveLaunchParams();
 
   const BotToken = '7939475782:AAHcneYBLKBcANQCdAcgJrgjscDsPgxlyuY'
-  const hash = parse(initDataRaw)?.hash || ''
+  const hash = initData?.hash || ''
    // 根据 initData 生成需要验证的 hash
   useEffect(() => {
-    const valid = validateHash(parse(initDataRaw), hash); // 验证数据
-    setIsValid(valid); // 设置验证结果
+    // const valid = validateHash(initDataRaw, hash); // 验证数据
+    // setIsValid(valid); // 设置验证结果
   }, [initDataRaw]);
 
    // 处理参数，排除 hash 字段并创建字符串数组
@@ -83,6 +83,7 @@ const gameOn = () => {
   const handleShare = () => {
     if (shareRef.current) {
       shareRef.current.onOpen(); 
+      event('gameon_share_click')
     }
   }
   const gameList = [
