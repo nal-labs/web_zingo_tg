@@ -12,6 +12,7 @@ import zcoin from '@/assets/lottie/zcoin.json'
 import styles from './index.module.less'
 import Lottie from 'lottie-react'
 import { event } from '@/utils/gtag'
+
 const missionPage = () => {
   const shareRef = useRef<any>(null);
   const [animating, setAnimating] = useState(false)

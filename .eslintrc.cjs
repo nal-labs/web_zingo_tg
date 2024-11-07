@@ -1,18 +1,16 @@
 module.exports = {
   extends: [
-    "plugin:prettier/recommended",
-    "plugin:react/jsx-runtime",
-    "prettier"
+    'plugin:react/recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:prettier/recommended'
   ],
-  plugins: ["prettier"],
+  plugins: ['react', '@typescript-eslint', 'prettier'],
   rules: {
-    "prettier/prettier": "error",
-    "arrow-body-style": "off",
-    "prefer-arrow-callback": "off",
+    'prettier/prettier': 'error'
   },
   settings: {
     react: {
-      version: "detect",
-    },
-  },
-};
+      version: 'detect'
+    }
+  }
+}

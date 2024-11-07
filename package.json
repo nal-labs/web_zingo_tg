@@ -21,8 +21,29 @@
     "postcss-pxtorem": "^6.1.0",
     "qs": "^6.13.0",
     "react": "^18.3.1",
+    "react-countup": "^6.5.3",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.27.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:react/recommended",
+      "plugin:prettier/recommended",
+      "prettier"
+    ],
+    "plugins": [
+      "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": "error",
+      "arrow-body-style": "off",
+      "prefer-arrow-callback": "off"
+    },
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
+    }
   },
   "devDependencies": {
     "@eslint/js": "^9.13.0",
@@ -32,7 +53,7 @@
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react": "^4.3.3",
-    "eslint": "^9.13.0",
+    "eslint": "^9.14.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-react": "^7.37.2",
